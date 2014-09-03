@@ -364,10 +364,12 @@
           });
         }
 
-        // Update the poster
-        this.playerEl_.querySelectorAll('.vjs-poster')[0].style.backgroundImage =
-          'url(https://img.youtube.com/vi/' + this.videoId + '/0.jpg)';
-        this.player_.poster('https://img.youtube.com/vi/' + this.videoId + '/0.jpg');
+        if (this.player_.poster() === undefined) {
+          // Update the poster
+          this.playerEl_.querySelectorAll('.vjs-poster')[0].style.backgroundImage =
+            'url(https://img.youtube.com/vi/' + this.videoId + '/0.jpg)';
+          this.player_.poster('https://img.youtube.com/vi/' + this.videoId + '/0.jpg');
+        }
       }
       /* else Invalid URL */
     }
