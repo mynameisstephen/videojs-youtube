@@ -451,10 +451,8 @@
   videojs.Youtube.prototype.setMuted = function(muted) {
     if(muted) {
       this.ytplayer.mute();
-      this.player_.volume(0);
     } else {
       this.ytplayer.unMute();
-      this.player_.volume(this.volumeVal);
     }
 
     this.mutedVal = muted;
